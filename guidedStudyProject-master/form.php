@@ -1,11 +1,12 @@
-
 <?php
-    require_once('login.php');
-    $milktea ->login();
-    $milktea ->register();
-    
-?>
 
+  
+  include ('functions.php');
+  $milktea->register();
+  $milktea->login();
+ 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +19,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
         integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-     <!-- <script src="./validation.js"></script> -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
     <title>Login</title>
 </head>
 
@@ -35,7 +38,7 @@
                 <h1>𝐖𝐞𝐥𝐜𝐨𝐦𝐞 to 🅣🅔🅐❜🅚🅣🅐🅛🅚🅔🅡 </h1>
                 <h4>You can't buy happiness, but you can buy milk tea and that's kind of the same thing.</h4>
                 <h4>Don't have an account? </h4>
-                <button class="switch-button" id="slide-left-button">Register</button>
+                <button class="switch-button" id="slide-left-button" >Register</button>
             </div>
         </div>
         <!-- LogIn Form -->
@@ -45,8 +48,8 @@
 
                 <p class="small">or use your email account:</p>
                 <form id="sign-in-form" method="POST">
-                    <input type="email" class="email" name="email" placeholder="Email" required />
-                    <input type="password" class="password" name="password" placeholder="Password" required />
+                    <input type="email" class="loginEmail" name="username" placeholder="Email" required />
+                    <input type="password" class="loginPass" name="loginPass" placeholder="Password" required />
                     <button type="submit" class="control-button " name="login" id="logIn">Log In</button>
                 </form>
             </div>
@@ -59,17 +62,29 @@
                     <small id="nameCheck" name="errorplace"></small><br>
                     <input type="text" class="name" name="name" id="name" placeholder="Name" required/><br>
                     <small id="emailCheck"></small><br>
-                    <input type="email" class="email" name="emailNew" id= "email" placeholder="Email" required/><br>
+                    <input type="email" class="email" name="regEmail" id= "email" placeholder="Email" required/><br>
                     <small id="passCheck"></small><br>
-                    <input type="password" class="password" name="psw" id= "password" placeholder="Password" required/><br>
+                    <input type="password" class="password" name="regPass" id= "password" placeholder="Password" required/><br>
                     <small id="passMatch"></small><br>
                     <input type="password" class="confirmPass" name="confirmPass" id="confirmPass" placeholder="Confirm password" required/>
-                    <button type="submit" class="control-button " name="register" id="register">Register</button>
+                    <button class="control-button " name="register" id="register" onclick="validate()" >Register</button>
                 </form>
             </div>
         </div>
     </div>
+
+   <!-- modal using pure html and css -->
+    <div id="popup1" class="overlay" style="display:none" >
+        <div class="popup">
+             <h2>Here i am</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                 
+            </div>
+        </div>
+    </div>
     <script type="text/javascript">
+
 
         var overlay = document.getElementById("overlay");
 
@@ -144,34 +159,75 @@
 
 
         // Validate the data inputted in the form
-        $('#register').on('click', function () {
-            var name = $('#name').val();
-            var email = $('#email').val();
-            var password = $('#password').val();
-            var confirmPass = $('#confirmpass').val();
+        // function validate(){
+        //     var name = document.getElementById('name');
+        //     var email = document.getElementById('regPass');
+        //     var password = document.getElementById('regPass');
+        //     var confirmPass = document.getElementById('confirmPass');
+        //     var letters =  /^[a-zA-Z\. ]*$/;    
+
+        //      if(name=="" || email =="" ||password =="" || confirmPass ==""){
+        //         // // alert("please input all fields");
+        //         // console.log('naa ko sa input tanan');
+        //         // document.querySelector('.content').text('Please input all fields');
+        //         // document.querySelector('#popup1').style.display ='flex';
+        //     }else{
+        //             if(letters.test(name)==true){
+        //                 alert("Please enter valid name");
+        //             }else{
+        //                   var validateEmail =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        //                 if(validateEmail.test(email)==true){
+        //                      alert("Please enter a valid email");
+        //                  }else{
+        //                      var passwd = /^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/;
+        //                     if(passwd.test(password)==true){
+        //                         alert('Your password must have 8 characters or more, and contain at least one special character, number, uppercase letter, and lowercase letter.');
+        //                     }else{
+        //                         if (password!=confirmPass){
+        //                         alert('Password did not match');
+        //                     } 
+        //                     }
+        //                 }
+        //             }
+        //         }
+        // }
+function validate(){
+       
+             var name = document.getElementById('name').value;
+            var email = document.getElementById('regEmail').value;
+            var password = document.getElementById('regPass').value;
+            var confirmPass = document.getElementById('confirmPass').value;
             var re = /^\w+$/;
             var mailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             var num = /[0-9]/;
             var capital = /[A-Z]/;
             var lowercase = /[a-z]/;
             var characters = /[$&+,:;=?@#|'<>.-^*()%!]/;
+            console.log('nakasud kos validate');
             if (re.test(name) = true) {
                 $('#nameCheck').text("Invalid name").css({ 'color': 'red' });
+                console.log('name');
             }
             if (mailFormat.test(email) = true) {
                 $('#emailCheck').text("Invalid email").css({ 'color': 'red' });
+                console.log('email');
             }
             if (password.length < 8) {
                 $('#passCheck').text("Password is too short").css({ 'color': 'red' });;
+                console.log('password length');
             } else if (password.length > 15) {
                 $('passCheck').text("Password is too long").css({ 'color': 'red' });
+                console.log('password less than');
             } else if (num.re(password) == true || capital.re(password) == true || lowercase.re(password)== true || characters.re(test) == true) {
                 $('#passCheck').text("Invalid password").css({ 'color': 'red' })
+                console.log('password verify');
             }
             if (confirmPass != password) {
                 $('#passMatch').text().css({ 'color': 'red' })
+                console.log('compare password');
             }
-        })
+       
+}
 
     </script>
 
