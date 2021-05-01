@@ -66,7 +66,7 @@
                     <input type="password" class="password" name="regPass" id= "password" placeholder="Password" required/><br>
                     <small id="passMatch"></small><br>
                     <input type="password" class="confirmPass" name="confirmPass" id="confirmPass" placeholder="Confirm password" required/>
-                    <button class="control-button " name="register" id="register" onclick="validate()" >Register</button>
+                    <button class="control-button " name="register" id="register" >Register</button>
                 </form>
             </div>
         </div>
@@ -193,49 +193,49 @@
         //         }
         // }
 
-        function validate() {
+        // function validate() {
 
-            console.log('nakasud ko diri');
-            var name = $('#name').val();
-            console.log(name);
-            var email = $('#regEmail').val();
-            console.log(email);
-            var password = $('#regPass').val();
-            console.log(password);
-            var confirmPass = $('#confirmPass').val();
-            console.log(confirmPass);
-            var re = /^\w+$/;
-            var mailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            var num = /[0-9]/;
-            var capital = /[A-Z]/;
-            var lowercase = /[a-z]/;
-            var characters = /[$&+,:;=?@#|'<>.-^*()%!]/;
+        //     console.log('nakasud ko diri');
+        //     var name = $('#name').val();
+        //     console.log(name);
+        //     var email = $('#regEmail').val();
+        //     console.log(email);
+        //     var password = $('#regPass').val();
+        //     console.log(password);
+        //     var confirmPass = $('#confirmPass').val();
+        //     console.log(confirmPass);
+        //     var re = /^\w+$/;
+        //     var mailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        //     var num = /[0-9]/;
+        //     var capital = /[A-Z]/;
+        //     var lowercase = /[a-z]/;
+        //     var characters = /[$&+,:;=?@#|'<>.-^*()%!]/;
             
-            if (re.test(name) = false) {
-                $('#nameCheck').text("Invalid name").css({ 'color': 'red' });
-                console.log('name');
+        //     if (re.test(name) = false) {
+        //         $('#nameCheck').text("Invalid name").css({ 'color': 'red' });
+        //         console.log('name');
               
-            }
-            if (mailFormat.test(email) = true) {
-                $('#emailCheck').text("Invalid email").css({ 'color': 'red' });
-                console.log('email');
-            }
-            if (password.length < 8) {
-                $('#passCheck').text("Password is too short").css({ 'color': 'red' });;
-                console.log('password length');
-            } else if (password.length > 15) {
-                $('passCheck').text("Password is too long").css({ 'color': 'red' });
-                console.log('password less than');
-            } else if (num.re(password) == true || capital.re(password) == true || lowercase.re(password)== true || characters.re(test) == true) {
-                $('#passCheck').text("Invalid password").css({ 'color': 'red' })
-                console.log('password verify');
-            }
-            if (confirmPass != password) {
-                $('#passMatch').text().css({ 'color': 'red' });
-                console.log('compare password');
-            }
+        //     }
+        //     if (mailFormat.test(email) = true) {
+        //         $('#emailCheck').text("Invalid email").css({ 'color': 'red' });
+        //         console.log('email');
+        //     }
+        //     if (password.length < 8) {
+        //         $('#passCheck').text("Password is too short").css({ 'color': 'red' });;
+        //         console.log('password length');
+        //     } else if (password.length > 15) {
+        //         $('passCheck').text("Password is too long").css({ 'color': 'red' });
+        //         console.log('password less than');
+        //     } else if (num.re(password) == true || capital.re(password) == true || lowercase.re(password)== true || characters.re(test) == true) {
+        //         $('#passCheck').text("Invalid password").css({ 'color': 'red' })
+        //         console.log('password verify');
+        //     }
+        //     if (confirmPass != password) {
+        //         $('#passMatch').text().css({ 'color': 'red' });
+        //         console.log('compare password');
+        //     }
 
-        }
+        // }
        
             
        
