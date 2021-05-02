@@ -85,8 +85,8 @@ session_start();
 
                     $statement = $connection->prepare("INSERT INTO users (fullname,email,password) VALUES ('".$fullname."','".$email."','".$password."')");
                     $statement -> execute ([$fullname,$email,$password]);
-                   // echo "<script>alert('Please login first')</script>";
-                    header ('location:form.php');
+                    echo "<script>alert('Please login first')</script>";
+                   // header ('location:form.php');
     
                 }
 
