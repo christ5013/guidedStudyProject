@@ -1,11 +1,22 @@
-<?php
 
-//   include ('functions.php');
-//   $milktea->check_login();
- 
+
+
+<?php
+include ('functions.php');
+    // $milktea->productcheck_login();
+
+    $connection = $milktea->openConnection();
+    $query =$connection->prepare("SELECT * FROM `product`");
+    $query->execute();
+    $fetchId= $query->fetch();
+    // echo $fetchId['product_name'];
+    $fetchData = $query->fetchAll();
+    // echo $fetchData;
+    // print_r($fetchData[2]);
+    // echo $fetchData[2]['product_name'];
+    
 
 ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -68,11 +79,11 @@
             <!-- Start of product 2 -->
             <div class="col-md-4 ">
                 <div class="product-top">
-                    <img src="../img/peachboba.png" alt="" class="card-img-top">
+                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[20]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
                     <!-- Rating Section -->
                     <div class="card-body">
-                        <h6>Peach MilkTea</h6>
-                        <p class="text-muted card-text">229.00</p>
+                        <h6><?php echo $fetchData[20]['product_name'] ?></h6>
+                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[20]['product_price'] ?></p>
                         <div class="overlay">
                               <button type="button" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
@@ -120,11 +131,11 @@
             <!-- Product 4 -->
             <div class="col-md-4">
                 <div class="product-top">
-                    <img src="../img/cafeboba.png" alt="" class="card-img-top">
+                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[21]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
                     <!-- Product Name -->
                     <div class="card-body">
-                        <h6>Cafe MilkTea</h6>
-                        <p class="text-muted card-text">259.00</p>
+                        <h6><?php echo $fetchData[21]['product_name'] ?></h6>
+                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[21]['product_price'] ?></p>
                         <div class="overlay">
                             <button type="button" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
@@ -147,11 +158,11 @@
             <!-- Product 5-->
             <div class="col-md-4">
                 <div class="product-top">
-                    <img src="../img/chocolateboba.png" alt="" class="card-img-top">
+                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[22]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
                     <!-- Rating Section -->
                     <div class="card-body">
-                        <h6>Chocolate MilkTea</h6>
-                        <p class="text-muted card-text">299.99</p>
+                        <h6><?php echo $fetchData[22]['product_name'] ?></h6>
+                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[22]['product_price'] ?></p>
                         <div class="overlay">
                              <button type="button" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
@@ -172,14 +183,14 @@
             </div>
             <div class="col-md-4">
                 <div class="product-top">
-                    <img src="../img/vanillaboba.png" alt="" class="card-img-top">
+                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[23]['product_image']).'" alt="First Product" class="card-img-top">' ?>
 
                     <!-- Rating Section -->
 
                     <div class="card-body">
-                        <h6>Vanilla MilkTea </h6>
+                        <h6><?php echo $fetchData[23]['product_name'] ?></h6>
 
-                        <p class="text-muted card-text">199.00</p>
+                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[23]['product_price'] ?></p>
                         <div class="overlay">
                              <button type="button" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
