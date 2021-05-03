@@ -1,3 +1,8 @@
+<?php 
+ include ('functions.php');
+//  $milktea->check_login();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="source/images/logo.png" type="image/icon type">
+  <link rel="icon" href="../img/logo.png" type="image/icon type">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
   <!-- font awesome link -->
@@ -23,7 +28,7 @@
 
   <!-- CSS Files -->
 
-  <link rel="stylesheet" href="source/css/index_style.css">
+  <link rel="stylesheet" href="../css/index_style.css">
 
 </head>
 
@@ -32,7 +37,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="source/images/logo.png" alt="store-logo"></a>
+      <a class="navbar-brand" href="#"><img src="../img/logo.png" alt="store-logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -40,18 +45,18 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home
+            <a class="nav-link" href="home.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Products</a>
+            <a class="nav-link" href="product.php">Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" id="icon"><i class="fa fa-shopping-cart" style="font-size:48px;color:rgb(20, 189, 231)"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Log Out</a>
+            <a class="nav-link" href="<?php $milktea->logout() ?>">Log Out</a>
           </li>
         </ul>
       </div>
@@ -71,13 +76,13 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./source/images/image1.png" class="d-block w-100" alt="...">
+            <img src="../img/image1.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./source/images/image2.png" class="d-block w-100" alt="...">
+            <img src="../img/image2.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./source/images/image3.png" class="d-block w-100" alt="...">
+            <img src="../img/image3.png" class="d-block w-100" alt="...">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -116,7 +121,7 @@
       </div>
 
       <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-        <img src="./source/images/banner.png" class="img-fluid" alt="">
+        <img src="../img/banner.png" class="img-fluid" alt="">
       </div>
 
     </div>
@@ -134,7 +139,7 @@
       <!-- This is the first pic -->
         <div class="col-md-4 col-sm-6">
             <div class="box3">
-                <img src="./source/images/fav1.jpg" height="375px;">
+                <img src="../img/fav1.jpg" height="375px;">
                 <div class="box-content">
                   <h3 class="text-center text-white">Jasmine</h3>
                   <p class="description">
@@ -146,7 +151,7 @@
         <!-- This is for 2nd pic -->
         <div class="col-md-4 col-sm-6">
             <div class="box3">
-                <img src="./source/images/fav2.jpeg">
+                <img src="../img/fav2.jpeg">
                 <div class="box-content">
                   <h3 class="text-center text-white">HongKong Milk Tea</h3>
                   <p class="description">
@@ -158,7 +163,7 @@
          <!-- This is the 3rd pic -->
         <div class="col-md-4 col-sm-6">
             <div class="box3">
-                <img src="./source/images/fav3.jpg">
+                <img src="../img/fav3.jpg">
                 <div class="box-content">
                     <h3 class="text-center text-white">Taro Milk Tea</h3>
                     <p class="description">
@@ -174,7 +179,7 @@
     <div class="row mt-30">
         <div class="col-md-4 col-sm-6">
             <div class="box3">
-                <img src="./source/images/fav4.jpg" height = "400px";>
+                <img src="../img/fav4.jpg" height = "400px";>
                 <div class="box-content">
                     <h3 class="text-center text-white">Honeydew Milk Tea</h3>
                     <p class="description">
@@ -186,7 +191,7 @@
          <!-- This is the 5th pic -->
         <div class="col-md-4 col-sm-6">
             <div class="box3">
-                <img src="./source/images/fav5.jpg">
+                <img src="../img/fav5.jpg">
                 <div class="box-content">
                   <h3 class="text-center text-white">Strawberry Milk Tea</h3>
                   <p class="description">
@@ -198,7 +203,7 @@
          <!-- This is the 6th pic -->
         <div class="col-md-4 col-sm-6">
             <div class="box3">
-                <img src="./source/images/fav6.jpg" height="400px">
+                <img src="../img/fav6.jpg" height="400px">
                 <div class="box-content">
                   <h3 class="text-center text-white">Classic Milk Tea</h3>
                   <p class="description">
@@ -260,7 +265,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="logo">
-            <img src="source/images/logo.png" alt="store-logo">
+            <img src="../img/logo.png" alt="store-logo">
           </div>
         </div>
         <footer>

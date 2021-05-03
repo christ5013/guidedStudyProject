@@ -1,3 +1,11 @@
+<?php
+
+//   include ('functions.php');
+//   $milktea->check_login();
+ 
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -20,16 +28,16 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="frozenmilktea.html">Frozen Milk Tea</a></li>
-                    <li><a href="bubbletea.html">Bubble Tea</a></li>
-                    <li><a href="boba.html">Boba Milk Tea</a></li>
-                    <li><a href="special.html">Special Milk Tea</a></li>
+                    <li><a href="frozenmilktea.php">Frozen Milk Tea</a></li>
+                    <li><a href="bubbletea.php">Bubble Tea</a></li>
+                    <li><a href="boba.php">Boba Milk Tea</a></li>
+                    <li><a href="special.php">Special Milk Tea</a></li>
                 </ul>
             </nav>
         </header>
         <div class="row">
             <!-- Product 1 -->
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="product-top">
                     <img src="../img/mangoboba.png" alt="First Product" class="card-img-top">
 
@@ -58,7 +66,7 @@
             </div>
             <!-- End of product 1 -->
             <!-- Start of product 2 -->
-            <div class="col-md-3 ">
+            <div class="col-md-4 ">
                 <div class="product-top">
                     <img src="../img/peachboba.png" alt="" class="card-img-top">
                     <!-- Rating Section -->
@@ -84,7 +92,7 @@
                 </div>
             </div>
             <!-- Product 3 -->
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="product-top">
                     <img src="../img/cookiesandcreamboba.png" alt="" class="card-img-top">
                     <div class="card-body">
@@ -110,7 +118,7 @@
                 </div>
             </div>
             <!-- Product 4 -->
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="product-top">
                     <img src="../img/cafeboba.png" alt="" class="card-img-top">
                     <!-- Product Name -->
@@ -137,7 +145,7 @@
                 </div>
             </div>
             <!-- Product 5-->
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="product-top">
                     <img src="../img/chocolateboba.png" alt="" class="card-img-top">
                     <!-- Rating Section -->
@@ -162,7 +170,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="product-top">
                     <img src="../img/vanillaboba.png" alt="" class="card-img-top">
 

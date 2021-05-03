@@ -28,27 +28,26 @@ session_start();
             }
         }
 
-        public function closeConnection(){
-            $this->$connection =null;
-        }
+        // public function closeConnection(){
+        //     $this->$connection =null;
+        // }
 
      //check if the user is already log in
         function check_login(){
 
-            
+            // echo $_SESSION['email']." email ni siya";
             if($_SESSION['email'] != ""){
                 $id = $_SESSION['email'];
                 $connection = $this->openConnection();
-                    $emailVer = $connection->prepare("SELECT * FROM users WHERE email = ? ");
-                    $emailVer->execute([$id]);
-                    $passwordVar = $emailVer->fetch();
-                    return $passwordVar;
-            }else{
+                $emailVer = $connection->prepare("SELECT * FROM users WHERE email = ? ");
+                $emailVer->execute([$id]);
+                $passwordVar = $emailVer->fetch();
+                return $passwordVar;
+             }else{
                 header("location:form.php");
             }
 
-        //     //redirect to login
-        //    die;
+       
         } 
 
         public function getUsers(){
@@ -65,7 +64,7 @@ session_start();
             }
         }
 
-        // login function
+       
 
         public function register(){
 
@@ -86,7 +85,7 @@ session_start();
                     $statement = $connection->prepare("INSERT INTO users (fullname,email,password) VALUES ('".$fullname."','".$email."','".$password."')");
                     $statement -> execute ([$fullname,$email,$password]);
                     echo "<script>alert('Please login first')</script>";
-                   // header ('location:form.php');
+                 
     
                 }
 
@@ -98,10 +97,7 @@ session_start();
             
                 if(isset($_POST['login'])){
                     $username = $_POST['username'];
-
                     $password = $_POST ['loginPass'];
-                    // echo $password;
-                    // echo $this->register()->$password;
                     $connection = $this->openConnection();
 
                     $emailVer = $connection->prepare("SELECT * FROM users WHERE email = ? ");
@@ -110,10 +106,10 @@ session_start();
 
                     if(password_verify($password, $passwordVar['password'])){
                         $_SESSION['email'] = $username;
-                        header ('location:landing.php');
+                        header ('location:home.php');
                     }else{
                         echo "<script>alert('Wrong Credentials!')</script>";
-                        //header ('location:form.php');
+                       
                     }
                 
                 }
@@ -122,18 +118,37 @@ session_start();
         public function logout(){
             $_SESSION['email'] = "";
             echo "form.php?logout=true";
+        }
 
-            // if (isset($_GET["logout"])) {
-            //     session_destroy();
-            //     // header("location:form.php?logout=true");
-            //     // exit;
-            // }
+        public function fetchProductData(){
+            $connection = $this->openConnection();
+            $query =$connection->prepare("SELECT * FROM `product`");
+            $query->execute();
+            $fetchId= $query->fetch();
+           // echo $fetchId['product_name'];
+            $fetchData = $query->fetchAll();
+            // echo $fetchData[2]['product_name'];
+        }
+
+
+        public function productCheck_login(){
+            $_SESSION['email'];
+            // if($_SESSION['email']){
+                // $id = $_SESSION['email'];
+                // $connection = $this->openConnection();
+                // $emailVer = $connection->prepare("SELECT * FROM users WHERE email = ? ");
+                //     $emailVer->execute([$id]);
+                //     $passwordVar = $emailVer->fetch();
+                //     return $passwordVar;
+            //}
+            
+            
         }
     }
 
     $milktea = new Milktea();
 
-
+    
 
 ?>
     

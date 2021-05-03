@@ -1,3 +1,11 @@
+<?php
+
+//   include ('functions.php');
+//   $milktea->check_login();
+ 
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -33,10 +41,10 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="frozenmilktea.html">Frozen Milk Tea</a></li>
-                    <li><a href="bubbletea.html">Bubble Tea</a></li>
-                    <li><a href="boba.html">Boba Milk Tea</a></li>
-                    <li><a href="special.html">Special Milk Tea</a></li>
+                    <li><a href="frozenmilktea.php">Frozen Milk Tea</a></li>
+                    <li><a href="bubbletea.php">Bubble Tea</a></li>
+                    <li><a href="boba.php">Boba Milk Tea</a></li>
+                    <li><a href="special.php">Special Milk Tea</a></li>
                 </ul>
             </nav>
         </header>
@@ -73,7 +81,7 @@
             <!-- Start of product 2 -->
             <div class="col-md-4 ">
                 <div class="product-top">
-                    <img src="../img/lychee.png" alt="" class="card-img-top">
+                    <img src="../img/lycheeMilktea.jpg" alt="" class="card-img-top">
                     <!-- Rating Section -->
                     <div class="card-body">
                         <h6>Lychee MilkTea</h6>

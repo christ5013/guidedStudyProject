@@ -125,7 +125,7 @@ a {
 a:hover {
     text-decoration: none;
 }
-@media(min-width:576px;
+@media(min-width:576px)
 {
     .container.transform-on-hover:hover {
         transform: translateY(-10px) scale(1.02);
