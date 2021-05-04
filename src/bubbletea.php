@@ -48,12 +48,12 @@ include ('functions.php');
             <!-- Product 1 -->
             <div class="col-md-4">
                 <div class="product-top">
-                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[13]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
+                <img src="<?php echo $fetchData[12]['product_image']?>" alt="First Product" class="card-img-top">
 
                     <!-- Product name and price -->
                     <div class="card-body">
-                        <h6><?php echo $fetchData[13]['product_name'] ?></h6>
-                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[13]['product_price'] ?></p>
+                        <h6><?php echo $fetchData[12]['product_name'] ?></h6>
+                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[12]['product_price'] ?></p>
                         <!-- Rating Section -->
                         <div class="overlay">
                              <button type="button" class="btn btn-secondary" title="Add to cart">
@@ -77,11 +77,11 @@ include ('functions.php');
             <!-- Start of product 2 -->
             <div class="col-md-4 ">
                 <div class="product-top">
-                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[14]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
+                <img src="<?php echo $fetchData[13]['product_image']?>" alt="First Product" class="card-img-top">
                     <!-- Rating Section -->
                     <div class="card-body">
-                        <h6><?php echo $fetchData[14]['product_name'] ?></h6>
-                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[14]['product_price'] ?></p>
+                        <h6><?php echo $fetchData[13]['product_name'] ?></h6>
+                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[13]['product_price'] ?></p>
                         <div class="overlay">
                              <button type="button" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
@@ -103,10 +103,10 @@ include ('functions.php');
             <!-- Product 3 -->
             <div class="col-md-4">
                 <div class="product-top">
-                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[15]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
+                <img src="<?php echo $fetchData[14]['product_image']?>" alt="First Product" class="card-img-top">
                     <div class="card-body">
-                        <h6><?php echo $fetchData[15]['product_name'] ?></h6>
-                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[15]['product_price'] ?></p>
+                        <h6><?php echo $fetchData[14]['product_name'] ?></h6>
+                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[14]['product_price'] ?></p>
                         <div class="overlay">
                            <button type="button" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
@@ -129,11 +129,11 @@ include ('functions.php');
             <!-- Product 4 -->
             <div class="col-md-4">
                 <div class="product-top">
-                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[7]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
+                <img src="<?php echo $fetchData[15]['product_image']?>" alt="First Product" class="card-img-top">
                     <!-- Product Name -->
                     <div class="card-body">
-                        <h6><?php echo $fetchData[7]['product_name'] ?></h6>
-                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[7]['product_price'] ?></p>
+                        <h6><?php echo $fetchData[15]['product_name'] ?></h6>
+                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[15]['product_price'] ?></p>
                         <div class="overlay">
                             <button type="button" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
@@ -156,10 +156,38 @@ include ('functions.php');
             <!-- Product 5-->
             <div class="col-md-4">
                 <div class="product-top">
-                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[17]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
+                <img src="<?php echo $fetchData[16]['product_image']?>" alt="First Product" class="card-img-top">
                     <!-- Rating Section -->
                     <div class="card-body">
+                        <h6><?php echo $fetchData[16]['product_name'] ?></h6>
+                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[16]['product_price'] ?></p>
+                        <div class="overlay">
+                             <button type="button" class="btn btn-secondary" title="Add to cart">
+                                <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
+                            </button>
+                            <button type="button" class="btn btn-secondary" title="Add to cart">
+                                <i class="fa fa-heart-o"></i>
+                            </button>
+                        </div>
+                        <div class="product-bottom text-center">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-top">
+                <img src="<?php echo $fetchData[17]['product_image']?>" alt="First Product" class="card-img-top">
+
+                    <!-- Rating Section -->
+
+                    <div class="card-body">
                         <h6><?php echo $fetchData[17]['product_name'] ?></h6>
+
                         <p class="text-muted card-text"><?php echo '₱'.$fetchData[17]['product_price'] ?></p>
                         <div class="overlay">
                              <button type="button" class="btn btn-secondary" title="Add to cart">
@@ -181,43 +209,15 @@ include ('functions.php');
             </div>
             <div class="col-md-4">
                 <div class="product-top">
-                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[18]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
+                <img src="<?php echo $fetchData[18]['product_image']?>" alt="First Product" class="card-img-top">
 
                     <!-- Rating Section -->
 
                     <div class="card-body">
-                        <h6><?php echo $fetchData[18]['product_name'] ?></h6>
+                        <h6><?php echo $fetchData[18]['product_name'] ?> </h6>
 
                         <p class="text-muted card-text"><?php echo '₱'.$fetchData[18]['product_price'] ?></p>
                         <div class="overlay">
-                             <button type="button" class="btn btn-secondary" title="Add to cart">
-                                <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="Add to cart">
-                                <i class="fa fa-heart-o"></i>
-                            </button>
-                        </div>
-                        <div class="product-bottom text-center">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-top">
-                    <img src="../img/strawberrybubble.png" alt="" class="card-img-top">
-
-                    <!-- Rating Section -->
-
-                    <div class="card-body">
-                        <h6>Strawberry MilkTea </h6>
-
-                        <p class="text-muted card-text">199.00</p>
-                        <div class="overlay">
                               <button type="button" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
                             </button>
@@ -237,35 +237,7 @@ include ('functions.php');
             </div>
             <div class="col-md-4">
                 <div class="product-top">
-                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[4]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
-
-                    <!-- Rating Section -->
-
-                    <div class="card-body">
-                        <h6><?php echo $fetchData[4]['product_name'] ?></h6>
-
-                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[4]['product_price'] ?></p>
-                        <div class="overlay">
-                              <button type="button" class="btn btn-secondary" title="Add to cart">
-                                <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="Add to cart">
-                                <i class="fa fa-heart-o"></i>
-                            </button>
-                        </div>
-                        <div class="product-bottom text-center">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-top">
-                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[19]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
+                <img src="<?php echo $fetchData[19]['product_image']?>" alt="First Product" class="card-img-top">
 
                     <!-- Rating Section -->
 
@@ -274,6 +246,34 @@ include ('functions.php');
 
                         <p class="text-muted card-text"><?php echo '₱'.$fetchData[19]['product_price'] ?></p>
                         <div class="overlay">
+                              <button type="button" class="btn btn-secondary" title="Add to cart">
+                                <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
+                            </button>
+                            <button type="button" class="btn btn-secondary" title="Add to cart">
+                                <i class="fa fa-heart-o"></i>
+                            </button>
+                        </div>
+                        <div class="product-bottom text-center">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-top">
+                <img src="<?php echo $fetchData[20]['product_image']?>" alt="First Product" class="card-img-top">
+
+                    <!-- Rating Section -->
+
+                    <div class="card-body">
+                        <h6><?php echo $fetchData[20]['product_name'] ?></h6>
+
+                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[20]['product_price'] ?></p>
+                        <div class="overlay">
                              <button type="button" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
                             </button>
@@ -293,14 +293,14 @@ include ('functions.php');
             </div>
             <div class="col-md-4">
                 <div class="product-top">
-                    <img src="../img/honeydewbubble.png" alt="" class="card-img-top">
+                <img src="<?php echo $fetchData[21]['product_image']?>" alt="First Product" class="card-img-top">
 
                     <!-- Rating Section -->
 
                     <div class="card-body">
-                        <h6>Honeydew MilkTea </h6>
+                        <h6><?php echo $fetchData[21]['product_name'] ?></h6>
 
-                        <p class="text-muted card-text">199.00</p>
+                        <p class="text-muted card-text"><?php echo '₱'.$fetchData[21]['product_price'] ?></p>
                         <div class="overlay">
                               <button type="button" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>

@@ -54,8 +54,7 @@ include ('functions.php');
                 <div class="col-md-4 ">
                     <div class="product-top" id="top1">
 
-                        <?php echo '<img src="data:image ; base64,'.base64_encode($fetchId['product_image']).'" alt="First Product" class="card-img-top">' ?> 
-
+                        <img src="<?php echo $fetchId['product_image']?>" alt="First Product" class="card-img-top">
                         <!-- Product name and price -->
                         <span class="product-new-label">Sale</span>
                         <span class="product-discount-label">20%</span>
@@ -87,7 +86,7 @@ include ('functions.php');
                 <!-- Start of product 2 -->
                 <div class="col-md-4 ">
                     <div class="product-top">
-                    <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[0]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
+                    <img src="<?php echo $fetchData[0]['product_image']?>" alt="First Product" class="card-img-top">
                         <!-- Rating Section -->
                         <span class="product-new-label">Sale</span>
                         <span class="product-discount-label">20%</span>
@@ -117,7 +116,7 @@ include ('functions.php');
             <!-- Product 3 -->
             <div class="col-md-4">
                 <div class="product-top">
-                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[1]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
+                <img src="<?php echo $fetchData[1]['product_image']?>" alt="First Product" class="card-img-top">
                     <span class="product-new-label">Sale</span>
                     <span class="product-discount-label">20%</span>
                     <div class="card-body">
@@ -147,7 +146,7 @@ include ('functions.php');
             <!-- Product 4 -->
             <div class="col-md-4">
                 <div class="product-top">
-                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[2]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
+                <img src="<?php echo $fetchData[2]['product_image']?>" alt="First Product" class="card-img-top">
                     <!-- Product Name -->
                     <span class="product-new-label">Sale</span>
                     <span class="product-discount-label">20%</span>
@@ -176,7 +175,7 @@ include ('functions.php');
             <!-- Product 5-->
             <div class="col-md-4">
                 <div class="product-top">
-                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[3]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
+                <img src="<?php echo $fetchData[3]['product_image']?>" alt="First Product" class="card-img-top">
                     <!-- Rating Section -->
                     <span class="product-new-label">Sale</span>
                     <span class="product-discount-label">20%</span>
@@ -203,7 +202,7 @@ include ('functions.php');
             </div>
             <div class="col-md-4">
                 <div class="product-top">
-                <?php echo '<img src="data:image ; base64,'.base64_encode($fetchData[4]['product_image']).'" alt="First Product" class="card-img-top">' ?> 
+                <img src="<?php echo $fetchData[4]['product_image']?>" alt="First Product" class="card-img-top">
 
                     <!-- Rating Section -->
                     <span class="product-new-label">Sale</span>

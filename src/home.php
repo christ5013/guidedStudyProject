@@ -37,29 +37,41 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="../img/logo.png" alt="store-logo"></a>
+      <a class="navbar-brand" href="#"><img src="source/images/logo.png" alt="store-logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <!-- Cart -->
+      <div class="cart" id="cart">
+        <div class="cart_container d-flex flex-row align-items-center justify-content-end">
+          <div class="cart_icon">
+            <a class="nav-link" href="#" id="icon"><i class="fa fa-shopping-cart"
+                style="font-size:30px;color:rgb(20, 189, 231)"></i></a>
+            </div>
+          </div>
+      </div>
+       <!-- logout -->
+      <div class="logout" id="logout">
+        <div class="logout d-flex flex-row align-items-center justify-content-end">
+          <div class="logout_icon">
+            <a href="#"><i class="fa fa-sign-out"></i> Log out</a>
+          </div>
+        </div>
+      </div>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="home.php">Home
+            <a class="nav-link" href="index.html">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="product.php">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" id="icon"><i class="fa fa-shopping-cart" style="font-size:48px;color:rgb(20, 189, 231)"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php $milktea->logout() ?>">Log Out</a>
+            <a class="nav-link" href="#">Products</a>
           </li>
         </ul>
       </div>
+
     </div>
   </nav>
 
