@@ -1,6 +1,11 @@
 <?php 
+
+// include php file name function 
  include ('functions.php');
-//  $milktea->check_login();
+ //call a variable instantiated to call a class name Milktea 
+//  call a function name check_login
+ $milktea->check_login();
+ 
 ?>
 
 <!DOCTYPE html>
@@ -33,11 +38,10 @@
 </head>
 
 <body>
-
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top one-edge-shadow">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="source/images/logo.png" alt="store-logo"></a>
+      <a class="navbar-brand" href="#"><img src="../img/logo.png" alt="store-logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -46,7 +50,7 @@
       <div class="cart" id="cart">
         <div class="cart_container d-flex flex-row align-items-center justify-content-end">
           <div class="cart_icon">
-            <a class="nav-link" href="#" id="icon"><i class="fa fa-shopping-cart"
+            <a class="nav-link" href="cart.php" id="icon"><i class="fa fa-shopping-cart"
                 style="font-size:30px;color:rgb(20, 189, 231)"></i></a>
             </div>
           </div>
@@ -55,19 +59,19 @@
       <div class="logout" id="logout">
         <div class="logout d-flex flex-row align-items-center justify-content-end">
           <div class="logout_icon">
-            <a href="#"><i class="fa fa-sign-out"></i> Log out</a>
+            <a href="form.php?logout=<?php echo $milktea->logout()?>"><i class="fa fa-sign-out"></i> Log out</a>
           </div>
         </div>
       </div>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home
+            <a class="nav-link" href="home.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Products</a>
+            <a class="nav-link" href="product.php">Products</a>
           </li>
         </ul>
       </div>
@@ -98,13 +102,13 @@
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                  </a>
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
         <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                  </a>
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
   </div>

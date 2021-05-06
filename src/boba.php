@@ -1,20 +1,59 @@
-
-
-
 <?php
-include ('functions.php');
-    // $milktea->productcheck_login();
+// include another php file 
+    include ('functions.php');
+// instance variable of class Milktea calling a function check_login
+    $milktea->check_login();
+?>
+<?php 
 
+if(isset($_POST['button27'])){
+    $id = $_POST['twentysevenId'];
+    $connection = $milktea->openConnection();
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name`, `product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query->execute();
+}
+if(isset($_POST['button27'])){
+    $id = $_POST['twentysevenId'];
+    $connection = $milktea->openConnection();
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name`, `product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query->execute();
+}
+if(isset($_POST['button28'])){
+    $id = $_POST['twentyeigthId'];
+    $connection = $milktea->openConnection();
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name`, `product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query->execute();
+}
+if(isset($_POST['button29'])){
+    $id = $_POST['twentynineId'];
+    $connection = $milktea->openConnection();
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name`, `product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query->execute();
+}
+if(isset($_POST['button30'])){
+    $id = $_POST['thirtyId'];
+    $connection = $milktea->openConnection();
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name`, `product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query->execute();
+}
+if(isset($_POST['button31'])){
+    $id = $_POST['thirtyoneId'];
+    $connection = $milktea->openConnection();
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name` ,`product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query->execute();
+}
+if(isset($_POST['button32'])){
+    $id = $_POST['thirtytwoId'];
+    $connection = $milktea->openConnection();
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name` ,`product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query->execute();
+}
+
+// fecth data from the database
     $connection = $milktea->openConnection();
     $query =$connection->prepare("SELECT * FROM `product`");
     $query->execute();
-    $fetchId= $query->fetch();
-    // echo $fetchId['product_name'];
     $fetchData = $query->fetchAll();
-    // echo $fetchData;
-    // print_r($fetchData[2]);
-    // echo $fetchData[2]['product_name'];
-    
 
 ?>
 <!doctype html>
@@ -28,8 +67,10 @@ include ('functions.php');
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/boostrap/4.1.3/css/boostrap.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/index_style.css">
     <link rel="stylesheet" href="../css/productStyle.css">
-    <title>Products Section</title>
+    <title>Boba milktea</title>
 </head>
 
 <body>
@@ -50,6 +91,7 @@ include ('functions.php');
             <!-- Product 1 -->
             <div class="col-md-4">
                 <div class="product-top">
+                <input type="hidden" name="twentysevenId" value="<?php echo $fetchData[22]['product_id']?>">
                 <img src="<?php echo $fetchData[22]['product_image']?>" alt="First Product" class="card-img-top">
 
                     <!-- Product name and price -->
@@ -58,7 +100,7 @@ include ('functions.php');
                         <p class="text-muted card-text"><?php echo '₱'.$fetchData[22]['product_price'] ?></p>
                         <!-- Rating Section -->
                         <div class="overlay">
-                             <button type="button" class="btn btn-secondary" title="Add to cart">
+                             <button name="button27" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
                             </button>
                             <button type="button" class="btn btn-secondary" title="Add to cart">
@@ -79,13 +121,14 @@ include ('functions.php');
             <!-- Start of product 2 -->
             <div class="col-md-4 ">
                 <div class="product-top">
+                <input type="hidden" name="twentyeigthId" value="<?php echo $fetchData[23]['product_id']?>">
                 <img src="<?php echo $fetchData[23]['product_image']?>" alt="First Product" class="card-img-top">
                     <!-- Rating Section -->
                     <div class="card-body">
                         <h6><?php echo $fetchData[23]['product_name'] ?></h6>
                         <p class="text-muted card-text"><?php echo '₱'.$fetchData[23]['product_price'] ?></p>
                         <div class="overlay">
-                              <button type="button" class="btn btn-secondary" title="Add to cart">
+                              <button name="button28" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
                             </button>
                             <button type="button" class="btn btn-secondary" title="Add to cart">
@@ -105,12 +148,13 @@ include ('functions.php');
             <!-- Product 3 -->
             <div class="col-md-4">
                 <div class="product-top">
+                <input type="hidden" name="twentynineId" value="<?php echo $fetchData[27]['product_id']?>">
                 <img src="<?php echo $fetchData[27]['product_image']?>" alt="First Product" class="card-img-top">
                     <div class="card-body">
                         <h6><?php echo $fetchData[27]['product_name'] ?></h6>
                         <p class="text-muted card-text"><?php echo '₱'.$fetchData[27]['product_price'] ?></p>
                         <div class="overlay">
-                             <button type="button" class="btn btn-secondary" title="Add to cart">
+                             <button name="button29" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
                             </button>
                             <button type="button" class="btn btn-secondary" title="Add to cart">
@@ -131,13 +175,14 @@ include ('functions.php');
             <!-- Product 4 -->
             <div class="col-md-4">
                 <div class="product-top">
+                <input type="hidden" name="thirtyId" value="<?php echo $fetchData[24]['product_id']?>">
                 <img src="<?php echo $fetchData[24]['product_image']?>" alt="First Product" class="card-img-top">
                     <!-- Product Name -->
                     <div class="card-body">
                         <h6><?php echo $fetchData[24]['product_name'] ?></h6>
                         <p class="text-muted card-text"><?php echo '₱'.$fetchData[24]['product_price'] ?></p>
                         <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="Add to cart">
+                            <button name="button30" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
                             </button>
                             <button type="button" class="btn btn-secondary" title="Add to cart">
@@ -158,13 +203,14 @@ include ('functions.php');
             <!-- Product 5-->
             <div class="col-md-4">
                 <div class="product-top">
+                <input type="hidden" name="thirtyoneId" value="<?php echo $fetchData[25]['product_id']?>">
                 <img src="<?php echo $fetchData[25]['product_image']?>" alt="First Product" class="card-img-top">
                     <!-- Rating Section -->
                     <div class="card-body">
                         <h6><?php echo $fetchData[25]['product_name'] ?></h6>
                         <p class="text-muted card-text"><?php echo '₱'.$fetchData[25]['product_price'] ?></p>
                         <div class="overlay">
-                             <button type="button" class="btn btn-secondary" title="Add to cart">
+                             <button name="button31" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
                             </button>
                             <button type="button" class="btn btn-secondary" title="Add to cart">
@@ -183,6 +229,7 @@ include ('functions.php');
             </div>
             <div class="col-md-4">
                 <div class="product-top">
+                <input type="hidden" name="thirtytwoId" value="<?php echo $fetchData[26]['product_id']?>">
                 <img src="<?php echo $fetchData[26]['product_image']?>" alt="First Product" class="card-img-top">
 
                     <!-- Rating Section -->
@@ -192,7 +239,7 @@ include ('functions.php');
 
                         <p class="text-muted card-text"><?php echo '₱'.$fetchData[26]['product_price'] ?></p>
                         <div class="overlay">
-                             <button type="button" class="btn btn-secondary" title="Add to cart">
+                             <button name="button32" class="btn btn-secondary" title="Add to cart">
                                 <i class="fa fa-shopping-cart fa-5px"> Add To Cart</i>
                             </button>
                             <button type="button" class="btn btn-secondary" title="Add to cart">

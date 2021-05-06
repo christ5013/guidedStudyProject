@@ -1,9 +1,11 @@
 
 <?php
+// start a session
 session_start();
 
     class Milktea {
 
+        // initialize variables
         private $server ="mysql:host=localhost;dbname=milktea";
         private $user = "root";
         private $password = "";
@@ -13,6 +15,7 @@ session_start();
         );
         protected $connection;
 
+        // function that holds the connection
         public function openConnection(){
             try {
                 $this->con = new PDO (
@@ -28,44 +31,30 @@ session_start();
             }
         }
 
-        // public function closeConnection(){
-        //     $this->$connection =null;
-        // }
+        // function to close the connection
+        public function closeConnection(){
+            $this->$connection =null;
+        }
 
      //check if the user is already log in
-        function check_login(){
 
-            // echo $_SESSION['email']." email ni siya";
+        function check_login(){
+            
             if($_SESSION['email'] != ""){
                 $id = $_SESSION['email'];
                 $connection = $this->openConnection();
                 $emailVer = $connection->prepare("SELECT * FROM users WHERE email = ? ");
                 $emailVer->execute([$id]);
-                $passwordVar = $emailVer->fetch();
-                return $passwordVar;
+                $fetch = $emailVer->fetch();
+                return $fetch;
              }else{
                 header("location:form.php");
             }
 
        
         } 
-
-        public function getUsers(){
-            $connection = $this->openConnection();
-            $statement = $connection->prepare("SELECT * FROM users");
-            $statement -> execute();
-            $user = $statement -> fetchAll();
-            $userCount = $statement-> rowCount();
-
-            if ($userCount > 0){
-                return $user;
-            }else{
-                return 0;
-            }
-        }
-
        
-
+        // register user
         public function register(){
 
             if(isset($_POST['register'])){
@@ -92,7 +81,7 @@ session_start();
                 
             }
         }
-
+        // user login
         public function login(){
             
                 if(isset($_POST['login'])){
@@ -115,35 +104,31 @@ session_start();
                 }
                 
         }
+       
+        // logout user
         public function logout(){
-            $_SESSION['email'] = "";
-            echo "form.php?logout=true";
-        }
-
-        public function fetchProductData(){
-            $connection = $this->openConnection();
-            $query =$connection->prepare("SELECT * FROM `product`");
-            $query->execute();
-            $fetchId= $query->fetch();
-           // echo $fetchId['product_name'];
-            $fetchData = $query->fetchAll();
-            // echo $fetchData[2]['product_name'];
-        }
-
-
-        public function productCheck_login(){
-            $_SESSION['email'];
-            // if($_SESSION['email']){
-                // $id = $_SESSION['email'];
-                // $connection = $this->openConnection();
-                // $emailVer = $connection->prepare("SELECT * FROM users WHERE email = ? ");
-                //     $emailVer->execute([$id]);
-                //     $passwordVar = $emailVer->fetch();
-                //     return $passwordVar;
-            //}
+            if(isset($_GET['logout'])){
+                session_destroy();
+                $_SESSION['email']="";
+                echo header("location:form.php?logout=true");
+                exit;
+            }
             
-            
+           
         }
+
+
+        // public function fetchProductData(){
+        //     $connection = $this->openConnection();
+        //     $query =$connection->prepare("SELECT * FROM `product`");
+        //     $query->execute();
+        //     $fetchId= $query->fetch();
+        //    // echo $fetchId['product_name'];
+        //     $fetchData = $query->fetchAll();
+        //     // echo $fetchData[2]['product_name'];
+        // }
+
+
     }
 
     $milktea = new Milktea();
