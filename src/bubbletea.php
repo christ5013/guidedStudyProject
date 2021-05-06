@@ -136,7 +136,7 @@ if(isset($_POST['button26'])){
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="product2.php">Products</a>
+            <a class="nav-link" href="product.php">Products</a>
           </li>
         </ul>
       </div>
