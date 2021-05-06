@@ -9,70 +9,70 @@
 if(isset($_POST['button7'])){
     $id = $_POST['sevenId'];
     $connection = $milktea->openConnection();
-    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name` ,`product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
 }
 
 if(isset($_POST['button8'])){
     $id = $_POST['eightId'];
     $connection = $milktea->openConnection();
-    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name` ,`product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
 }
 
 if(isset($_POST['button9'])){
     $id = $_POST['nineId'];
     $connection = $milktea->openConnection();
-    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name`, `product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
 }
 
 if(isset($_POST['button10'])){
     $id = $_POST['tenId'];
     $connection = $milktea->openConnection();
-    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name`, `product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
 }
 
 if(isset($_POST['button11'])){
     $id = $_POST['elevenId'];
     $connection = $milktea->openConnection();
-    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name`, `product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
 }
 
 if(isset($_POST['button12'])){
     $id = $_POST['twelveId'];
     $connection = $milktea->openConnection();
-    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name` ,`product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
 }
 
 if(isset($_POST['button13'])){
     $id = $_POST['thirteenId'];
     $connection = $milktea->openConnection();
-    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name` ,`product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
 }
 
 if(isset($_POST['button14'])){
     $id = $_POST['fourteenId'];
     $connection = $milktea->openConnection();
-    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name`, `product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
 }
 
 if(isset($_POST['button15'])){
     $id = $_POST['fifteenId'];
     $connection = $milktea->openConnection();
-    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name` ,`product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
 }
 
 if(isset($_POST['button16'])){
     $id = $_POST['sixteenId'];
     $connection = $milktea->openConnection();
-    $query = $connection->prepare("INSERT INTO `cart` (`product_id` , `product_image`, `product_name`, `product_price`) SELECT `product_id` , `product_image` ,`product_name`, `product_price` FROM `product` WHERE `product_id` = '$id'");
+    $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
 }
 // fecth data from the database
@@ -114,19 +114,62 @@ if(isset($_POST['button16'])){
 </head>
 
 <body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top one-edge-shadow">
     <div class="container">
-        <h2 style="margin-left:50px">Featured Products</h2>
-        <hr style="width:400px">
+      <a class="navbar-brand" href="#"><img src="../img/logo.png" alt="store-logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Cart -->
+      <div class="cart" id="cart">
+        <div class="cart_container d-flex flex-row align-items-center justify-content-end">
+          <div class="cart_icon">
+            <a class="nav-link" href="cart.php" id="icon"><i class="fa fa-shopping-cart"
+                style="font-size:30px;color:rgb(20, 189, 231)"></i></a>
+            </div>
+          </div>
+      </div>
+       <!-- logout -->
+      <div class="logout" id="logout">
+        <div class="logout d-flex flex-row align-items-center justify-content-end">
+          <div class="logout_icon">
+            <a href="form.php?logout=<?php echo $milktea->logout()?>"><i class="fa fa-sign-out"></i> Log out</a>
+          </div>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="home.php">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product2.php">Products</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+<!-- second navigation bar -->
+<div class="container" id = "secondNav">
+    <h2 style="margin-left:50px">Featured Products</h2>
+    <hr style="width:400px">
         <header>
-            <nav>
-                <ul>
-                    <li><a href="frozenmilktea.php">Frozen Milk Tea</a></li>
-                    <li><a href="bubbletea.php">Bubble Tea</a></li>
-                    <li><a href="boba.php">Boba Milk Tea</a></li>
-                    <li><a href="special.php">Special Milk Tea</a></li>
-                </ul>
-            </nav>
+                <div class = "nav">
+                    <ul>
+                        <li><a href="frozenmilktea.php">Frozen Milk Tea</a></li>
+                        <li><a href="bubbletea.php">Bubble Tea</a></li>
+                        <li><a href="boba.php">Boba Milk Tea</a></li>
+                        <li><a href="special.php">Special Milk Tea</a></li>
+                    </ul>
+                </div>
         </header>
+</div>
         <form method="POST">
             <div class="row">
                 <!-- Product 1 -->
