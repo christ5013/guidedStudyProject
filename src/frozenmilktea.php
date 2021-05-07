@@ -5,12 +5,13 @@
     $milktea->check_login();
 ?>
 <?php 
-
+$email = $_SESSION['email'];
 if(isset($_POST['button7'])){
     $id = $_POST['sevenId'];
     $connection = $milktea->openConnection();
     $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
+    echo "<script>alert('successfully added to cart!') </script>";
 }
 
 if(isset($_POST['button8'])){
@@ -18,6 +19,7 @@ if(isset($_POST['button8'])){
     $connection = $milktea->openConnection();
     $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
+    echo "<script>alert('successfully added to cart!') </script>";
 }
 
 if(isset($_POST['button9'])){
@@ -25,6 +27,7 @@ if(isset($_POST['button9'])){
     $connection = $milktea->openConnection();
     $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
+    echo "<script>alert('successfully added to cart!') </script>";
 }
 
 if(isset($_POST['button10'])){
@@ -32,6 +35,7 @@ if(isset($_POST['button10'])){
     $connection = $milktea->openConnection();
     $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
+    echo "<script>alert('successfully added to cart!') </script>";
 }
 
 if(isset($_POST['button11'])){
@@ -39,6 +43,7 @@ if(isset($_POST['button11'])){
     $connection = $milktea->openConnection();
     $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
+    echo "<script>alert('successfully added to cart!') </script>";
 }
 
 if(isset($_POST['button12'])){
@@ -46,6 +51,7 @@ if(isset($_POST['button12'])){
     $connection = $milktea->openConnection();
     $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
+    echo "<script>alert('successfully added to cart!') </script>";
 }
 
 if(isset($_POST['button13'])){
@@ -53,6 +59,7 @@ if(isset($_POST['button13'])){
     $connection = $milktea->openConnection();
     $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
+    echo "<script>alert('successfully added to cart!') </script>";
 }
 
 if(isset($_POST['button14'])){
@@ -60,6 +67,7 @@ if(isset($_POST['button14'])){
     $connection = $milktea->openConnection();
     $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
+    echo "<script>alert('successfully added to cart!') </script>";
 }
 
 if(isset($_POST['button15'])){
@@ -67,6 +75,7 @@ if(isset($_POST['button15'])){
     $connection = $milktea->openConnection();
     $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
+    echo "<script>alert('successfully added to cart!') </script>";
 }
 
 if(isset($_POST['button16'])){
@@ -74,6 +83,7 @@ if(isset($_POST['button16'])){
     $connection = $milktea->openConnection();
     $query = $connection->prepare("INSERT INTO `cart` (`product_id`,`email` , `product_image`, `product_name`, `product_price`) SELECT `product`.`product_id`,`users`.`email` , `product`.`product_image` ,`product`.`product_name`, `product`.`product_price` FROM `product` CROSS JOIN `users` WHERE `product_id` = '$id' AND `email` ='$email' " );
     $query->execute();
+    echo "<script>alert('successfully added to cart!') </script>";
 }
 // fecth data from the database
     $connection = $milktea->openConnection();
@@ -123,19 +133,18 @@ if(isset($_POST['button16'])){
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Cart -->
-      <div class="cart" id="cart">
-        <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-          <div class="cart_icon">
-            <a class="nav-link" href="cart.php" id="icon"><i class="fa fa-shopping-cart"
-                style="font-size:30px;color:rgb(20, 189, 231)"></i></a>
+      <div id="cart" class="cart">
+            <div class="container">
+                <span class="p1 fa-stack fa-2x has-badge" data-count="<?php $milktea->countCart(); ?>">
+                    <a class="nav-link" href="cart.php" id="icon"><i class="fa fa-shopping-cart" data-count="4b" style="font-size:30px;color:rgb(20, 189, 231)"></i></a>
+                </span>
             </div>
-          </div>
-      </div>
+        </div>
        <!-- logout -->
       <div class="logout" id="logout">
         <div class="logout d-flex flex-row align-items-center justify-content-end">
           <div class="logout_icon">
-            <a href="form.php?logout=<?php echo $milktea->logout()?>"><i class="fa fa-sign-out"></i> Log out</a>
+            <a href="landing.php?logout=<?php echo $milktea->logout()?>"><i class="fa fa-sign-out"></i> Log out</a>
           </div>
         </div>
       </div>

@@ -47,19 +47,19 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Cart -->
-      <div class="cart" id="cart">
-        <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-          <div class="cart_icon">
-            <a class="nav-link" href="cart.php" id="icon"><i class="fa fa-shopping-cart"
-                style="font-size:30px;color:rgb(20, 189, 231)"></i></a>
-            </div>
-          </div>
+      <div id="cart" class="cart">
+        <div class="container">
+          <span class="p1 fa-stack fa-2x has-badge" data-count="<?php $milktea->countCart();?>">
+          <a class="nav-link" href="cart.php" id="icon"><i class="fa fa-shopping-cart" data-count="4b"
+              style="font-size:30px;color:rgb(20, 189, 231)"></i></a>
+          </span>
+        </div>
       </div>
        <!-- logout -->
       <div class="logout" id="logout">
         <div class="logout d-flex flex-row align-items-center justify-content-end">
           <div class="logout_icon">
-            <a href="form.php?logout=<?php echo $milktea->logout()?>"><i class="fa fa-sign-out"></i> Log out</a>
+            <a href="landing.php?logout=<?php echo $milktea->logout()?>"><i class="fa fa-sign-out"></i> Log out</a>
           </div>
         </div>
       </div>

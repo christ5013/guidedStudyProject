@@ -1,12 +1,24 @@
 <?php 
 
-include('functions.php');
+// include another php file 
+include ('functions.php');
+// instance variable of class Milktea calling a function check_login
+ $milktea->check_login();
+
+//  delete item from cart
+if(isset($_GET['delete'])){
+    $id = $_GET['delete'];
+    $milktea->delete($id);
+}
+
 $email = $_SESSION['email'];
 $connection = $milktea->openConnection();
 $query =$connection->prepare("SELECT * FROM `cart` WHERE email= '$email'");
 $query->execute();
 // $fetchId= $query->fetch();
 $fetchData = $query->fetchAll();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,11 +32,14 @@ $fetchData = $query->fetchAll();
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Shopping Cart</title>
 </head>
 
 <body>
 
+
+<form method="POST">
     <div class="card">
         <div class="row">
             <div class="col-md-10 cart">
@@ -33,9 +48,10 @@ $fetchData = $query->fetchAll();
                         <div class="col">
                             <h4><b>Shopping Cart</b></h4>
                         </div>
-                        <div class="col align-self-center text-right text-muted">3 items</div>
+                        <div class="col align-self-center text-right text-muted"><?php echo $milktea->countItems();" items" ?></div>
                     </div>
                 </div>
+                <?php $count=0; $total=0;?>
                 <?php foreach($fetchData as $data){?>
                     <div class="row border-top border-bottom">
                         <div class="row main align-items-center">
@@ -44,51 +60,39 @@ $fetchData = $query->fetchAll();
                                 <div class="row text-muted">Milktea</div>
                                 <div class="row"><?php echo $data['product_name']?></div>
                             </div>
-                            <div class="col"> <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a> </div>
-                            <div class="col">&euro; <?php echo $data['product_price']?> <span class="close"><i class="fa fa-trash-alt"></i></span></div>
+                            <!-- <div class="col"> <button class="subtractItem" style="border:none; margin-right:4px">-</button><a name="quantity" class="border"><?php echo $milktea->addItemQuantity();?></a><button name="addItem" style="border:none; margin-left:4px">+</button> </div> -->
+                            <div class="col"> <?php echo "₱".$data['product_price']?> <span class="close"><a href="cart.php?delete=<?php echo $data['product_id']?>"><i class="fa fa-trash-alt"></i></a></span></div>
                         </div>
                     </div>
-                <?php }?>
-                <!-- <div class="row">
-                    <div class="row main align-items-center">
-                        <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/ba3tvGm.jpg"></div>
-                        <div class="col">
-                            <div class="row text-muted">Shirt</div>
-                            <div class="row">Cotton T-shirt</div>
-                        </div>
-                        <div class="col"> <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a> </div>
-                        <div class="col">&euro; 44.00<span class="close"><i class="fa fa-trash-alt"></i></span> </div>
-                    </div>
-                </div>
-                <div class="row border-top border-bottom">
-                    <div class="row main align-items-center">
-                        <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/pHQ3xT3.jpg"></div>
-                        <div class="col">
-                            <div class="row text-muted">Shirt</div>
-                            <div class="row">Cotton T-shirt</div>
-                        </div>
-                        <div class="col"> <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a> </div>
-                        <div class="col">&euro; 44.00 <span class="close"><i class="fa fa-trash-alt"></i></span></div>
-                    </div>
-                </div> -->
-                <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+
+                    <?php 
+                        $price = $data['product_price'];
+                        $total += $price;
+                    ?>
+                <?php $count++; }?>
+                    <!-- <input type="hidden" name="total" value=<?php //echo $total?>> -->
+                    <input type="hidden" name="countItems" value="<?php echo $count?>">
+               
+                <div class="back-to-shop"><a href="product.php">&leftarrow;<span class="text-muted">Back to shop</span></a></div>
         
             <div class="col-md-6 summary" style="float:right;">
                 
                     <h5><b>Summary</b></h5>
                 
                 <hr>
-                <div class="row">
-                    <div class="col" style="margin-left:10px;">ITEMS 3</div>
-                    <div class="col text-right">&euro; 132.00</div>
-                </div>
-                <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+               
+                <div class="row" >
                     <div class="col">TOTAL PRICE</div>
-                    <div class="col text-right">&euro; 137.00</div>
-                </div> <button class="btn"cstyle="font-size:14px">CHECKOUT</button>
+                    <div class="col text-right" ><input readonly value=<?php echo $total?> name="totalSummary"></div>
+                </div> <button type="submit" class="btn"cstyle="font-size:14px" name="checkout">CHECKOUT</button>
             </div>
         </div>
     </div>
+   
+    </form>
+    <?php  $milktea->getCheckOutData();?>
+
+  
 </body>
 
 </html>

@@ -32,12 +32,11 @@ session_start();
         }
 
         // function to close the connection
-        public function closeConnection(){
-            $this->$connection =null;
-        }
+        // public function closeConnection(){
+        //     $this->$connection =null;
+        // }
 
      //check if the user is already log in
-
         function check_login(){
             
             if($_SESSION['email'] != ""){
@@ -48,7 +47,7 @@ session_start();
                 $fetch = $emailVer->fetch();
                 return $fetch;
              }else{
-                header("location:form.php");
+                header("location:landing.php");
             }
 
        
@@ -116,18 +115,56 @@ session_start();
             
            
         }
+// wala pani
+        public function countItems(){
+            if (isset($_POST['countItems'])){
+                $items = $_POST['countItems'];
+                echo $items;
+            }
+        }
 
+    //   wala pani
+        public function addItemQuantity(){
+           $countQuantity = 1;
+            if(isset($_POST['addItem'])){
+                echo $countQuantity+1;
+            }
 
-        // public function fetchProductData(){
-        //     $connection = $this->openConnection();
-        //     $query =$connection->prepare("SELECT * FROM `product`");
-        //     $query->execute();
-        //     $fetchId= $query->fetch();
-        //    // echo $fetchId['product_name'];
-        //     $fetchData = $query->fetchAll();
-        //     // echo $fetchData[2]['product_name'];
-        // }
+        }
 
+        public function getCheckOutData(){
+            $email = $_SESSION['email'];
+            // echo $email;
+            if(isset($_POST['checkout'])){
+                $total = $_POST['totalSummary'];
+                $connection = $this->openConnection();
+                $query =$connection->prepare("INSERT INTO shoppingcart(email,total) VALUES('$email','$total')");
+                $query->execute();
+                echo "<script>alert('Your have successfully ordered!') </script>";
+                
+
+            }
+          
+        }
+        // count items in shopping cart
+        public function countCart(){
+            $username = $_SESSION['email'];
+            $connection = $this->openConnection();
+            $statement= $connection->prepare("SELECT * FROM cart WHERE email =?");
+            $statement->execute([$username]);
+           $count=$statement->rowCount();
+           echo $count;
+        }
+
+        // delete to cart
+        public function delete($id){
+           
+                $connection = $this->openConnection();
+                $query = $connection->prepare("DELETE FROM cart WHERE product_id = '$id'");
+                $query->execute();
+                
+            
+        }
 
     }
 
